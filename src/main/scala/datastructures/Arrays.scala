@@ -6,7 +6,6 @@ object Arrays {
 
     //collections
     //arrays --> collection of elements of same data type, they are mutable
-
     var a = Array(1, 2, 3)
     a(0)
     //a(4)

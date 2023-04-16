@@ -29,6 +29,7 @@ object HigherOrderFunc{
     // 1,5 = 55
 
     println("-------")
+
     //Higher order Recursive Function
     def sumOfSquares(x: Int, y: Int): Int = {
       if (x > y) 0

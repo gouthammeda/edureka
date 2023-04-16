@@ -4,20 +4,26 @@ package datastructures
 object Lists {
   def main(args: Array[String]) {
     //List is collection of elements of same data type, they are immutable
-    //Nil- End of List
-    val ls5 = 1 :: 2 :: 3 :: Nil
+
     val list = List(1, 2, 3)
-    val t = List(1, 2.0, 33D, 4000L)
-    val ls7 = List("foo", 1, 2)
-    val ls3 = List.fill(3)("foo")
-    val ls2 = List.range(1, 10)
-    val ls4 = List.tabulate(5)(n => n * n)
-    val ls8 = List.tabulate(5)(n => "Edureka" + n)
+    //Nil- End of List
+    val ls1 = 1 :: 2 :: 3 :: Nil
+    println(ls1)
+    val ls2 = List(1, 2.0, 33D, 4000L)
+    println(ls2)
+    val ls3 = List("foo", 1, 2)
+    println(ls3)
+    val ls4 = List.fill(3)("foo")
+    println(ls4)
+    val ls5 = List.range(1, 10)
+    println(ls5)
+    val ls6 = List.tabulate(5)(n => n * n)
+    println(ls6)
+    val ls7 = List.tabulate(5)(n => "Edureka" + n)
+    println(ls7)
 
     //List buffer supports adding elements to it
-
     import scala.collection.mutable.ListBuffer
-
     val k = ListBuffer[Int]()
     k += 1
     k += (1, 2, 3, 4, 5)
@@ -34,7 +40,7 @@ object Lists {
     val z = -1 :: y
     //declare variable as var and re-assign results to it.
     var hi = List(2)
-    //:: preprends element to a list.
+    //:: prepends element to a list.
     hi = 1 :: hi
     //hi = -1 :: 0 :: hi
 
