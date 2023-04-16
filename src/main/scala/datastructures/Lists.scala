@@ -1,0 +1,76 @@
+package datastructures
+
+/* Created by gouthamkumarreddymeda on 4/15/23 */
+object Lists {
+  def main(args: Array[String]) {
+    //List is collection of elements of same data type, they are immutable
+    //Nil- End of List
+    val ls5 = 1 :: 2 :: 3 :: Nil
+    val list = List(1, 2, 3)
+    val t = List(1, 2.0, 33D, 4000L)
+    val ls7 = List("foo", 1, 2)
+    val ls3 = List.fill(3)("foo")
+    val ls2 = List.range(1, 10)
+    val ls4 = List.tabulate(5)(n => n * n)
+    val ls8 = List.tabulate(5)(n => "Edureka" + n)
+
+    //List buffer supports adding elements to it
+
+    import scala.collection.mutable.ListBuffer
+
+    val k = ListBuffer[Int]()
+    k += 1
+    k += (1, 2, 3, 4, 5)
+
+    var fruits = new ListBuffer[String]()
+    fruits += "Apple"
+    fruits += ("Strawberry", "Kiwi", "Pineapple")
+    fruits -= ("Apple", "Kiwi")
+    val fruitsList = fruits.toList
+
+    //adding elements to a list
+    val tide = List(3)
+    val y = 1 :: 2 :: tide
+    val z = -1 :: y
+    //declare variable as var and re-assign results to it.
+    var hi = List(2)
+    //:: preprends element to a list.
+    hi = 1 :: hi
+    //hi = -1 :: 0 :: hi
+
+    //delete elements from list, we can just filter the elements in a list as it is immutable.
+    val original_List1 = List(7, 8, 4, 3, 2)
+    val newList1 = original_List1.filter(_ > 3)
+    //declare variable as var and re-assign results to it.
+    var m = List(5, 1, 4, 3, 2)
+    m.filter(_ > 3)
+
+    //merging lists
+    val p = List(111, 200, 321)
+    val q = List(4, -5, 60)
+    val r = p ++ q
+    val w = p ::: q
+    val g = List.concat(p, q)
+
+    val lst = List(1, 2)
+    lst.head
+    lst.tail
+    2 :: List(4, 5)
+
+    //iterating over a list
+    def sum(l: List[Int]): Int = {
+      if (l == Nil) 0 else l.head + sum(l.tail)
+    }
+
+    println(sum(List(2, 3)))
+    println("-----")
+
+    // 1st Iteration:
+    // 1 + sum(2,3)
+    // 2nd:
+    // 1 + 2 + sum(3)
+    // 3rd:
+    // 1+2+3+ sum(List())
+
+  }
+}
