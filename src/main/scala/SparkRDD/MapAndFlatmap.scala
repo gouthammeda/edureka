@@ -4,7 +4,7 @@ import org.apache.spark
 import org.apache.spark.{SparkConf, SparkContext}
 
 /* Created by gouthamkumarreddymeda on 4/15/23 */
-object Transformations1 {
+object MapAndFlatmap {
   def main(args:Array[String]){
 
     val conf = new SparkConf()
@@ -13,7 +13,6 @@ object Transformations1 {
     val sc = new SparkContext(conf)
     sc.setLogLevel("ERROR")
 
-    // Transformations:
   //Map:
   //1 input gives 1 output
   val input = sc.parallelize(List("dog", "salmon", "salmon", "rat", "elephant"), 3)
@@ -42,10 +41,10 @@ object Transformations1 {
   val common = firstrdd.intersection(secondrdd)
   common.collect.foreach(println)
 
-  //word-count using reducebykey
+  //word-count using reduce by key
   //ReduceByKey-> It is two step process first it groups the values and then arithmetic operation is performed on those grouped values.
   val words = Array("one", "two", "two", "four", "six", "six", "eight", "nine", "ten")
-  val data = sc.parallelize(words).map(x => (x, 1)).reduceByKey((x, y) => (x + y))
+  val data = sc.parallelize(words).map(x => (x, 1)).reduceByKey((x, y) => x + y)
   data.collect.foreach(println)
 
   //distinct

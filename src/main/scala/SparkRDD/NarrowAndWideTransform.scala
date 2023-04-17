@@ -3,7 +3,7 @@ package SparkRDD
 import org.apache.spark.{SparkConf, SparkContext}
 
 /* Created by gouthamkumarreddymeda on 4/16/23 */
-object NarrowAndWideTransformation {
+object NarrowAndWideTransform {
 
   val conf = new SparkConf()
     .setMaster("local[2]")

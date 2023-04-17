@@ -14,3 +14,5 @@ hdfs dfs -rm -r -skipTrash /user/gowthambha69edu/createDir
 
 hdfs dfs -get /user/gowthambha69edu/createDir/sample.txt
           -copyToLocal
+
+
