@@ -1,6 +1,4 @@
 package oops.Trait
-
-
   class IntIterator(to: Int) extends Iterator[Int] {
     private var current = 0
     override def hasNext: Boolean = current < to
@@ -25,8 +23,8 @@ package oops.Trait
   object Run {
     def main(args: Array[String]) {
       val iterator = new IntIterator(10)
-      iterator.next()
-      iterator.next()
+      println(iterator.next())
+      println(iterator.next())
     }
   }
 

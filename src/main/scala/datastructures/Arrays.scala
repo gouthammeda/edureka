@@ -33,7 +33,6 @@ object Arrays {
     //come back to vidya question
 
     import scala.collection.mutable.ArrayBuffer
-
     val ab = ArrayBuffer[Int]()
     ab += 1
     ab += (2, 3, 4)

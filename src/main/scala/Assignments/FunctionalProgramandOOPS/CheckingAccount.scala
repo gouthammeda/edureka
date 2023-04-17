@@ -19,6 +19,5 @@ object CheckingAccount{
     var Acct = new AccountInformation(balance)
     Acct.deposit(100)
     Acct.withdraw(150)
-
   }
 }

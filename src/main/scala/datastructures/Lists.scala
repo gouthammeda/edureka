@@ -22,54 +22,66 @@ object Lists {
     val ls7 = List.tabulate(5)(n => "Edureka" + n)
     println(ls7)
 
+    println("-----")
     //List buffer supports adding elements to it
     import scala.collection.mutable.ListBuffer
     val k = ListBuffer[Int]()
     k += 1
     k += (1, 2, 3, 4, 5)
+    println(k)
 
     var fruits = new ListBuffer[String]()
     fruits += "Apple"
     fruits += ("Strawberry", "Kiwi", "Pineapple")
     fruits -= ("Apple", "Kiwi")
     val fruitsList = fruits.toList
+    println(fruitsList)
 
+    println("-----")
     //adding elements to a list
     val tide = List(3)
     val y = 1 :: 2 :: tide
     val z = -1 :: y
+    println(z)
+
     //declare variable as var and re-assign results to it.
     var hi = List(2)
     //:: prepends element to a list.
     hi = 1 :: hi
-    //hi = -1 :: 0 :: hi
-
+    hi = -1 :: 0 :: hi
+    println(hi)
+    println("-----")
     //delete elements from list, we can just filter the elements in a list as it is immutable.
     val original_List1 = List(7, 8, 4, 3, 2)
-    val newList1 = original_List1.filter(_ > 3)
+    val newList = original_List1.filter(_ > 3)
+    println(newList)
     //declare variable as var and re-assign results to it.
     var m = List(5, 1, 4, 3, 2)
-    m.filter(_ > 3)
-
+    m.filter(_ > 3).foreach(println)
+    println("-----")
     //merging lists
     val p = List(111, 200, 321)
     val q = List(4, -5, 60)
-    val r = p ++ q
+    val mergeList = p ++ q
+    println(mergeList)
     val w = p ::: q
+    println(w)
     val g = List.concat(p, q)
+    println(g)
 
     val lst = List(1, 2)
-    lst.head
-    lst.tail
-    2 :: List(4, 5)
+    println(lst.head)
+    println(lst.tail)
+    println(2 :: List(4, 5))
 
+    println("-----")
     //iterating over a list
     def sum(l: List[Int]): Int = {
       if (l == Nil) 0 else l.head + sum(l.tail)
     }
 
     println(sum(List(2, 3)))
-    println("-----")
+
 
     // 1st Iteration:
     // 1 + sum(2,3)
