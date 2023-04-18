@@ -1,0 +1,18 @@
+cd /opt/cloudera/parcels/CDH/lib/hadoop/etc/hadoop
+vi hdfs-site.xml
+
+List all files and Directories in HDFS path
+hdfs dfs -ls /user/gowthambha69edu
+
+hdfs dfs -mkdir /user/gowthambha69edu/createDir
+
+hdfs dfs -copyFromLocal sample.txt /user/gowthambha69edu/createDir
+-put
+hdfs dfs -rmdir /user/gowthambha69edu/createDir
+
+hdfs dfs -rm -r -skipTrash /user/gowthambha69edu/createDir
+
+hdfs dfs -get /user/gowthambha69edu/createDir/sample.txt
+          -copyToLocal
+
+
