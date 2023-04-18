@@ -1,6 +1,7 @@
 package variablesIfElse
 //scala  /home/prakash/Desktop/sample.scala
 //:load [scala file path]
+
 object variables {
   def main(args: Array[String]): Unit = {
 
@@ -40,10 +41,10 @@ object variables {
     }
     println(z)
 
-    val opt1 = Some("Edureka")
-    println(opt1)
-    val opt2 = None
-    println(opt2)
+//    val opt1 = Some("Edureka")
+//    println(opt1)
+//    val opt2 = None
+//    println(opt2)
 
   }
 }

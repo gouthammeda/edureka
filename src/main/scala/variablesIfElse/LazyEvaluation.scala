@@ -11,7 +11,6 @@ object LazyEvaluation {
     //val file1 = scala.io.Source.fromFile(args(0))
     //-->java.io.FileNotFoundException: /home/gowthambha81edu/sample.txt (No such file or directory)
     lazy val file2 = scala.io.Source.fromFile(args(0))
-
     println(file2)
 
     //m takes the last statement in the expression.
