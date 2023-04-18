@@ -1,14 +1,16 @@
 package datastructures
 
+import scala.collection.mutable.Set
+//set --> removes the duplicates and order is not guaranteed, it contains elements of same type.
+//sets are both mutable and immutable.
+
+
 /* Created by gouthamkumarreddymeda on 4/15/23 */
 object sets {
   def main(args: Array[String]) {
-    //set --> removes the duplicates and order is not guaranteed, it contains elements of same type.
-    //sets are both mutable and immutable.
 
-    import scala.collection.mutable.Set
     //set of integer type
-    var o: Set[Int] = Set(1, 3, 5, 7)
+    val o: Set[Int] = Set(1, 3, 5, 7)
     println(o)
     val fruits1 = Set("apples", "oranges", "pears")
     val num: Set[Int] = Set()
@@ -27,15 +29,15 @@ object sets {
     println("-----")
 
     //concatenating sets.
-    var s1 = Set(7, 9, 8, 9)
-    var s2 = Set(10, 11, 12, 13)
+    val s1 = Set(7, 9, 8, 9)
+    val s2 = Set(10, 11, 12, 13)
     println(s1 ++ s2)
     //s1.++(s2)
     println("-----")
 
     //intersection
-    var a1 = Set(11, 44, 33, 22)
-    var b1 = Set(77, 99, 22, 88)
+    val a1 = Set(11, 44, 33, 22)
+    val b1 = Set(77, 99, 22, 88)
     println(a1.&(b1))
 
   }
