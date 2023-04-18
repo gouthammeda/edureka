@@ -2,31 +2,23 @@ package Assignments.FunctionalProgramandOOPS
 import scala.io.Source
 import scala.collection.mutable.ArrayBuffer
 
-object filelinesreverse  {
+object filelinesreverse {
   def main (args: Array[String])= {
-        // Local variable declaration:
-//          var a = "Hello World"//
+ //Local variable declaration:
+//          var a = "Hello World"
 //          println(a.mkString(" "))
 //          for ( m1 <-1 to a.size ) {
-//                print(a(a.size -m1))
+//                print(a(a.size - m1))
 //            }
           val filename1=args(0)
-          for (line <- Source.fromFile(filename1).getLines) {
-            //println(line)
-            val splittedLines = line.split("/n")
-            val ab = ArrayBuffer[String]()
-            for (ele <- splittedLines) ab += ele
-            ab.foreach(println)
-
-            var arraybuffer_length = ab.length
-            println("arraybuffer length is", arraybuffer_length)
-            //            while (arraybuffer_length!=0) {
-            //              println("inside while")
-            //              println(ab(arraybuffer_length))
-            //              arraybuffer_length = arraybuffer_length - 1
-            //            }
+          val input = Source.fromFile(filename1).getLines.toArray
+          //input.foreach(println)
+          var length = input.length - 1
+          //println(length)
+          while(length >= 0){
+            println(input(length))
+            length = length - 1
           }
-
       }
    }
 

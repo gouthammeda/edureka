@@ -5,12 +5,12 @@ import org.apache.spark.{SparkConf, SparkContext}
 /* Created by gouthamkumarreddymeda on 4/15/23 */
 object WordCount {
   def main(args: Array[String]) {
-    val logFile = "/user/gowthambha87edu/sample.txt"
+    val logFile = args(0)
     val sparkConf = new SparkConf().setAppName("Spark word count")
     val sc = new SparkContext(sparkConf)
     val file = sc.textFile(logFile)
     val counts = file.flatMap(_.split(" ")).map(x => (x, 1)).reduceByKey(_ + _)
-    counts.saveAsTextFile("/user/gowthambha87edu/sampleOutput/SparkScalaWordcount/output.txt")
+    counts.saveAsTextFile(args(1))
   }
 }
 

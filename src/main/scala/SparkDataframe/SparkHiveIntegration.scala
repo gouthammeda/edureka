@@ -14,6 +14,7 @@ object SparkHiveIntegration {
       .master(args(0))
       .getOrCreate()
     import spark.implicits._
+    spark.sparkContext.setLogLevel("ERROR")
 
     val data = Seq(Elp("Harry", 24, "Manhattan"), Elp("Marry", 21, "NewYork"), Elp("Ram", 23, "NewDelhi"))
     val df = data.toDF()

@@ -11,7 +11,6 @@ object pairAndDoubleRDD {
     val sc = new SparkContext(conf)
 
     //Pair RDD'S
-
     //FoldByKey--merges values based on function provided.
     val ardd = sc.parallelize(List(" dog ", " cat ", " owl ", " gnu ", " ant "), 2)
     val brdd = ardd.map(x => (x.length, x))
@@ -48,7 +47,6 @@ object pairAndDoubleRDD {
         s.split(" ")
       }
     }
-
     file.flatMap(utilFuncs.mySplit(_)).map(x => (x, 1)).reduceByKey((x, y) => x + y).collect()
   }
 
