@@ -12,14 +12,14 @@ object Recursion {
     println(factorial(5))
     println("------")
     /*
-factorial(5)
-5 * factorial(4),5 is out
-5 * 4 * factorial(3),4 is out
-5 * 4 * 3 * factorial(2),3 is out
-5 * 4 * 3 * 2 * factorial(1),2 is out
-5 * 4 * 3 * 2 * 1,1 is out
-results are multiplied to get 120
-*/
+      factorial(5)
+      5 * factorial(4),5 is out
+      5 * 4 * factorial(3),4 is out
+      5 * 4 * 3 * factorial(2),3 is out
+      5 * 4 * 3 * 2 * factorial(1),2 is out
+      5 * 4 * 3 * 2 * 1,1 is out
+      results are multiplied to get 120
+      */
 
     def functionExample(a: Int, b: Int): Int = {
       if (b == 0) 0 else a + functionExample(a, b - 1)

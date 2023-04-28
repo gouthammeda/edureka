@@ -27,7 +27,6 @@ object whileLoop {
       numberOfDonutsBaked += 1
       println(s"Number of donuts baked = $numberOfDonutsBaked")
     } while (numberOfDonutsBaked < 10)
-    println("------")
 
   }
 }

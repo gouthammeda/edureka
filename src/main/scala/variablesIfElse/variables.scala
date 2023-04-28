@@ -14,16 +14,13 @@ object variables {
     println('C')
     println(12.5)
 
-    //variables are memory locations for storing values.
-    //initialize value of a with 10
+    //variables are memory locations for storing values, initialize value of x with 10
     val x = 10
-    //x = 13
     val e = x.toString
     println(e)
 
     //even tough we didn't declare the type it is automatically inferred and remains same for entire scope,
-    //making scala statically typed language.
-    //val are immutable but var is mutable.
+    //making scala statically typed language. val are immutable but var is mutable.
 
     var msg = "Hello World"
     msg = "Hello"
@@ -40,11 +37,5 @@ object variables {
       b - a
     }
     println(z)
-
-//    val opt1 = Some("Edureka")
-//    println(opt1)
-//    val opt2 = None
-//    println(opt2)
-
   }
 }

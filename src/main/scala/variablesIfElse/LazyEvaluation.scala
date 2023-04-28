@@ -8,10 +8,12 @@ object LazyEvaluation {
     //lazy evaluation
     val file = scala.io.Source.fromFile(args(0))
     println(file)
-    //val file1 = scala.io.Source.fromFile(args(0))
+
+    //val file = scala.io.Source.fromFile(args(0))
     //-->java.io.FileNotFoundException: /home/gowthambha81edu/sample.txt (No such file or directory)
-    lazy val file2 = scala.io.Source.fromFile(args(0))
-    println(file2)
+
+    //when declared as lazy then it will be called only when it needs to be accessible
+    lazy val file1 = scala.io.Source.fromFile(args(0))
 
     //m takes the last statement in the expression.
     {
@@ -25,7 +27,7 @@ object LazyEvaluation {
     println("-----")
 
 
-    //if it is declared as lazy then first bar prints out then foo followed with m.
+    //if the value is declared as lazy then first bar prints out then foo followed with m.
     //val can only be declared as lazy, but var can't
     {
       lazy val m = {
@@ -35,6 +37,6 @@ object LazyEvaluation {
       println("bar")
       println(m)
     }
-
+    println(file1)
   }
 }

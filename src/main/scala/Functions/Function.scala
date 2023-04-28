@@ -10,11 +10,12 @@ object Function {
     }
     sayhello()
 
+    println("---")
+
     //without=with parameters
     def sum(a: Int, b: Int): Unit = {
       println(a + b)
     }
-
     sum(1, 2)
 
     //with = without parameters

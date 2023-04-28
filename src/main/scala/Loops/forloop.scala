@@ -25,6 +25,7 @@ object forloop {
 
     println("---")
 
+    //increment the value of i by 2
   for (i <- 1 to 5 by 2) println(i)
   println("------")
 
@@ -46,6 +47,6 @@ object forloop {
   //yield returns collection of values
   val k = for (i <- 1 to 20) yield i * 2.5
   println(k)
-  println("------")
+
   }
 }
