@@ -52,14 +52,12 @@ for each wide transformation a new stage is created
 
 coalesce and repartition:
 in coalesce there is minimum movement of data takes place across a partition but would become bottleneck for
-further processing for partition that has more records when compared with lesser records.
+further processing for partition that has more records when compared with partition of lesser records.
 second and third partition are added of total 3 partitions and first remains untouched in coalesce
 repartition is where lot of shuffling takes place but data is equally distributed among partition further processing
-on those records will be faster
-repartition is expensive processes as compared with coalesce as there is a lot of shuffling that is happening.
-in repartition the order is not maintained in partitions.
-1 partition may be present on totally different server as well so performance
-wise repartition is costly as data might be transferred through a network.
+on those records will be faster.repartition is expensive processes as compared with coalesce as there is a lot of
+shuffling is happening.in repartition the order is not maintained in partitions.1 partition may be present on
+totally different server as well so performance wise repartition is costly as data might be transferred through a network.
 coalesce only used for decreasing the partitions with repartition we can increase the partitions.
 if there are four partitions and coalesce of 2 is given then records of 2 partitions will be merged using coalesce.
 

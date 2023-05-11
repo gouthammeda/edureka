@@ -1,15 +1,14 @@
 package SparkRDD
 
-import org.apache.spark
-import org.apache.spark.{SparkConf, SparkContext, SparkFiles}
+import org.apache.spark.{SparkConf, SparkContext}
 
 /* Created by gouthamkumarreddymeda on 4/15/23 */
 object sparkRDD {
   def main(args: Array[String]) {
     //configuring spark properties:
 
-    //spark properties control most application settings and are configured separately for each application
-    //properties can be set in spark conf passed to your spark context.
+    //spark properties control most application settings and are configured separately for
+    // each application properties can be set in spark conf passed to your spark context.
     val conf = new SparkConf()
       .setMaster("local[1]")
       .setAppName("Creating RDD")
@@ -39,6 +38,19 @@ object sparkRDD {
     //RDD Objects are used to build operator DAG, then there will be DAG scheduler to split graph
     // into stages of task and stages are submitted when ready then and launch
     // task via cluster manager.Execute tasks store and serve blocks.
+
+    //loading and saving data to files
+    //    spark.SparkFiles
+    //    sc.addFile("abc.dat")
+    //    val inFile = sc.textFile(SparkFiles.get("abc.dat"))
+
+    val rdd1 = sc.parallelize(Array("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"), 3)
+    rdd1.collect()
+    rdd1.first
+    rdd1.take(10)
+    //rdd1.saveAsTextFile(args(0))
+    //rddOfStrings.saveAsTextFile("out.txt")
+    //keyValueRdd.saveAsSequenceFile("sequenceOut")
 
   }
 }
