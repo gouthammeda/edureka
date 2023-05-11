@@ -1,4 +1,4 @@
-package variablesIfElse
+package variables
 //scala  /home/prakash/Desktop/sample.scala
 //:load [scala file path]
 
@@ -21,13 +21,13 @@ object variables {
 
     //even tough we didn't declare the type it is automatically inferred and remains same for entire scope,
     //making scala statically typed language. val are immutable but var is mutable.
-
     var msg = "Hello World"
     msg = "Hello"
+    println(msg)
 
     var y = 13
     y = 12
-    //x = "Edureka"
+    println(y)
 
     //in scala block is list of expressions and result is also an expression.
     //value of block is the value of last expression of it.

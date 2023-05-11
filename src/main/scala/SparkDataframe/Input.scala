@@ -14,7 +14,7 @@ object Input {
       .getOrCreate()
     spark.sparkContext.setLogLevel("ERROR")
 
-    import spark.implicits._
+
     val peopleDF = spark.read.json(args(0))
     peopleDF.show()
     val personGt30 = peopleDF.filter(col("age").gt(30))
@@ -37,8 +37,8 @@ object Input {
     nested.printSchema
     nested.select("IOT data.DeviceType", "timestamp").show()
 
-    val multiline = spark.read.option("multiline", "true").csv("/user/gowthambha87edu/sparkDF/multiline.json")
-    multiline.show()
+//    val multiline = spark.read.option("multiline", "true").csv("/user/gowthambha87edu/sparkDF/multiline.json")
+//    multiline.show()
 
   }
 }

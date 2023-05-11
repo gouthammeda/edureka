@@ -4,7 +4,6 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 /* Created by gouthamkumarreddymeda on 4/17/23 */
 object CoalesceAndRepartition {
-
     def main(args:Array[String]) {
       val conf = new SparkConf()
         .setMaster("local[1]")
@@ -20,7 +19,8 @@ object CoalesceAndRepartition {
       println(rdd2.getNumPartitions)
       println(rdd3.getNumPartitions)
       println("-----")
-      //glom() method is used to the data for each partition.
+
+      // glom method is used to the data for each partition.
       rdd1.glom().collect()(0).foreach(println)
       rdd1.glom().collect()(1).foreach(println)
       rdd1.glom().collect()(2).foreach(println)

@@ -1,6 +1,5 @@
 package SparkDataframe
 
-import org.apache.spark
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
 

@@ -1,6 +1,5 @@
 package SparkRDD
 
-import org.apache.spark
 import org.apache.spark.{SparkConf, SparkContext}
 
 /* Created by gouthamkumarreddymeda on 4/15/23 */
@@ -36,23 +35,27 @@ object MapAndFlatmap {
   val datagrouped = datainput.groupByKey()
   datagrouped.collect.foreach(println)
     println("-----")
-  //Intersection:
+
+    //Intersection:
   val firstrdd = sc.parallelize(Array((1, "jan", 2016), (3, "nov", 2014), (16, "feb", 2014)))
   val secondrdd = sc.parallelize(Array((1, "jan", 2016), (5, "dec", 2014)))
   val common = firstrdd.intersection(secondrdd)
   common.collect.foreach(println)
     println("-----")
-  //word-count using reduce by key
+
+    //word-count using reduce by key
   //ReduceByKey-> It is two step process first it groups the values and then arithmetic operation is performed on those grouped values.
   val words = Array("one", "two", "two", "four", "six", "six", "eight", "nine", "ten")
   val data = sc.parallelize(words).map(x => (x, 1)).reduceByKey((x, y) => x + y)
   data.collect.foreach(println)
     println("-----")
-  //distinct
+
+    //distinct
   val rdd1 = sc.parallelize(Array((1, "jan", 2016), (3, "nov", 2014), (16, "feb", 2014), (1, "jan", 2016)))
   val rddDistinct = rdd1.distinct
   rddDistinct.collect.foreach(println)
     println("-----")
+
   //map vs flatmap
   //map is 1 to 1 mapping, i.e., for a given array single line of an string inside it is giving 1 output, so we will have just 3 outputs
   //in transformed array
