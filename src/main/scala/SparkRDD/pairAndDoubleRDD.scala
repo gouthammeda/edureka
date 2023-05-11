@@ -14,7 +14,7 @@ object pairAndDoubleRDD {
     val b = sc.parallelize(List(1,1,1,1,3,3,3,4,4,8,8,9,9))
     //b.countByValue
 
-    //sample
+    //sample rdd
     val krdd = sc.parallelize(1 to 10, 3)
     println(krdd.sample(withReplacement = false, fraction = 0.1, seed = 0).count)
 
