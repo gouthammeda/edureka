@@ -6,10 +6,12 @@ import org.apache.spark.{SparkConf, SparkContext}
 object WordCount {
   def main(args: Array[String]) {
     val logFile = args(0)
-    val sparkConf = new SparkConf().setAppName("Spark word count")
+    val sparkConf = new SparkConf().setAppName("Spark word count").setMaster("local")
     val sc = new SparkContext(sparkConf)
+    sc.setLogLevel("ERROR")
     val file = sc.textFile(logFile)
     val counts = file.flatMap(_.split(" ")).map(x => (x, 1)).reduceByKey(_ + _)
+    //counts.collect().foreach(println)
     counts.saveAsTextFile(args(1))
   }
 }

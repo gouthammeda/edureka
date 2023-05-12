@@ -9,6 +9,7 @@ object NarrowAndWideTransform {
       .setMaster("local[2]")
       .setAppName("narrow and wide transform")
     val sc = new SparkContext(conf)
+    sc.setLogLevel("ERROR")
 
     // narrow vs wide transformation.
     val input = sc.parallelize(Array("jan", "feb", "march", "apr", "may", "jan", "feb", "aug", "may"))
@@ -24,5 +25,6 @@ object NarrowAndWideTransform {
 
     val c = b.reduceByKey(_ + _)
     c.collect.foreach(println)
-  }
+
+     }
 }

@@ -10,15 +10,18 @@ object AccumulatorsAndBroadcast {
       .setMaster("local[2]")
       .setAppName("running pair rdds")
     val sc = new SparkContext(conf)
+    sc.setLogLevel("ERROR")
 
     //RDD Partition and Achieving parallelism
-    //shared variables->with broadcast variables are shipped to all executors and cached for future reference.
+    //shared variables
+    //with broadcast variables are shipped to all executors and cached for future reference.
     val broadcastVar = sc.broadcast(Array(1, 2, 3))
-    broadcastVar.value
+    broadcastVar.value.foreach(println)
 
-    //Accumulators: used for aggregating information across executors like number of records or corrupted or calls made to a library api
+    //Accumulators: used for aggregating information across executors like number of records
+    // are corrupted or calls made to a library api
     val accum = sc.longAccumulator("My Accumulator")
     sc.parallelize(Array(1, 2, 3, 4)).foreach(x => accum.add(x))
-    accum.value
+    println(accum.value)
   }
 }

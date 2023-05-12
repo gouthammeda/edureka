@@ -61,12 +61,12 @@ totally different server as well so performance wise repartition is costly as da
 coalesce only used for decreasing the partitions with repartition we can increase the partitions.
 if there are four partitions and coalesce of 2 is given then records of 2 partitions will be merged using coalesce.
 
+serialization: converting textual data to byte stream(o's and 1's)
+deserialization: converting byte stream to textual data
 persistence level:
 mem_only: when we have 12 gb of data but 10 gb of ram in mem only all 10 gb is calculated and stored in memory
 and remaining 2gb is calculated when we hit collect on it
 mem_disk: when we have 12 gb of data all 12 gb is taken and calculated and 10 gb is stored in mem and remaining 2 gb in disk.
-serialization: converting textual data to byte stream(o's and 1's)
-deserialization: converting byte stream to textual data
 saving in serialized format is used if there is a lot of shuffling needs to happen on data we prefer to store
 it as memory_only_ser as opposed to adding an extra step of serialization in mem_only
 but if shuffling is not required then we can store it as mem_only as deserialization is not required and cpu is not highly used.
