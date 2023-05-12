@@ -4,7 +4,7 @@ import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
 
 /* Created by gouthamkumarreddymeda on 4/17/23 */
-object Transformations {
+object AggandJoins {
 
   def main(args: Array[String]) {
     val spark = SparkSession

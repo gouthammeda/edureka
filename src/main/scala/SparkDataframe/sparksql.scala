@@ -15,10 +15,10 @@ object sparksql {
 
     //using spark sql
     val people = spark.read.json(args(0))
-    people.createOrReplaceTempView("people table")
-    val peopleGt30 = spark.sql("select * from people table where age > 30")
+    people.createOrReplaceTempView("people_table")
+    val peopleGt30 = spark.sql("select * from people_table where age > 30")
     peopleGt30.show
-    people.filter(col("age").gt(30)).show
+    //people.filter(col("age").gt(30)).show
 
   }
 }
