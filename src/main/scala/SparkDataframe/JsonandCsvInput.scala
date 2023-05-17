@@ -30,6 +30,7 @@ object JsonandCsvInput {
     val peoplewithDepartment = peopleSalary.withColumn("Department", lit("Finance"))
     peoplewithDepartment.show()
 
+    //csv input
     val empDf = spark.read.option("header",true).csv(args(1))
     empDf.show()
     //by default it shows 20 characters in the column.
