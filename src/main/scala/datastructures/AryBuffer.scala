@@ -12,6 +12,5 @@ object AryBuffer {
     ab += (2, 3, 4)
     ab ++= Array(6, 7, 8)
     ab.foreach(println)
-    println("------")
   }
 }

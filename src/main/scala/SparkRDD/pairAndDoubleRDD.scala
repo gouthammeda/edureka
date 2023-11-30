@@ -10,24 +10,6 @@ object pairAndDoubleRDD {
       .setAppName("running pair rdds")
     val sc = new SparkContext(conf)
     sc.setLogLevel("ERROR")
-    //General RDD functions.
-    val b = sc.parallelize(List(1,1,1,1,3,3,3,4,4,8,8,9,9))
-    //b.countByValue
-
-    //sample rdd
-    val krdd = sc.parallelize(1 to 10000, 3)
-    println(krdd.sample(withReplacement = false, fraction = 0.1, seed = 0).count)
-
-    //repetitions --> false
-    println(krdd.sample(withReplacement = true, fraction = 0.3, seed = 0).count)
-    println(krdd.sample(withReplacement = true, fraction = 0.3, seed = 13).count)
-
-    val xrdd = sc.parallelize(1 to 9,3)
-    val yrdd = sc.parallelize(1 to 3,3)
-    val j = xrdd.subtract(yrdd)
-    //println(c.toDebugString)
-
-    println("------")
 
     //Pair RDD'S
     //FoldByKey-->merges values based on function provided.

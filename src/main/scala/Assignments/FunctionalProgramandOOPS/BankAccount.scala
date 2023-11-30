@@ -1,5 +1,5 @@
 package Assignments.FunctionalProgramandOOPS
-
+object BankAccount{
 class AccountInfo(initBal:Double) {
   private var balance = initBal
   def deposit(amount: Double): Unit = {
@@ -12,7 +12,7 @@ class AccountInfo(initBal:Double) {
     println("Amount Withdraw " + balance)
   }
 }
-  object BankAccount{
+
     val balance = 1000.00
     def main(args:Array[String]): Unit ={
       var Acct = new AccountInfo(balance)

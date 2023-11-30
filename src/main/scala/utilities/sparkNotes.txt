@@ -70,3 +70,9 @@ mem_disk: when we have 12 gb of data all 12 gb is taken and calculated and 10 gb
 saving in serialized format is used if there is a lot of shuffling needs to happen on data we prefer to store
 it as memory_only_ser as opposed to adding an extra step of serialization in mem_only
 but if shuffling is not required then we can store it as mem_only as deserialization is not required and cpu is not highly used.
+
+spark sql has the following libraries:
+1.Data Source API
+2.Data Frame API
+3.Interpreter & Optimizer
+4.SQL service

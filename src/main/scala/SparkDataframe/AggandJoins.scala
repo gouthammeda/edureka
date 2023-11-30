@@ -17,7 +17,7 @@ object AggandJoins {
     spark.sparkContext.setLogLevel("ERROR")
 
     //using csv as input
-    val empData = spark.read.option("header", true).option("inferSchema", true).csv(args(0))
+    val empData = spark.read.option("header", value = true).option("inferSchema", value = true).csv(args(0))
     empData.printSchema
 
     empData.withColumnRenamed("salary", "money").show
