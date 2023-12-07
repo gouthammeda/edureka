@@ -16,8 +16,6 @@ object userdefinedfunc {
       .withColumn("avgLowF", round(CtoF(col("avgLow")), 1))
       .drop("avgHigh", "avgLow")
       .show
-    //temp.withColumn("avgHighF", round(CtoF(col("avgHigh")), 1))
-    //round (((8.7 * 9.0 / 5.0) + 32), 1)
 
     val df = spark.read.json(args(1))
     df.createOrReplaceTempView("people")
