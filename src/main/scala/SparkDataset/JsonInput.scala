@@ -1,20 +1,11 @@
 package SparkDataset
 
-import org.apache.spark.sql.SparkSession
-
+import utilities.sparkconfig.spark
+import spark.implicits._
 
 /* Created by gouthamkumarreddymeda on 4/16/23 */
-object DatasetJsonInput {
+object JsonInput {
   def main(args: Array[String]) {
-
-    val spark = SparkSession
-      .builder
-      .appName("dataset")
-      .master("local")
-      .getOrCreate()
-    import spark.implicits._
-    spark.sparkContext.setLogLevel("ERROR")
-
 //    dataframe we get compile errors but in dataset we get runtime errors-- which is true
 //    using Seq() collection to create a dataset.
     val caseClassDS = Seq(Employee("Andy", 32)).toDS()

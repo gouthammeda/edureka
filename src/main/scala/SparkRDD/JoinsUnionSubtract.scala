@@ -1,15 +1,9 @@
 package SparkRDD
+import utilities.sparkconfig.sc
 
-import org.apache.spark.{SparkConf, SparkContext}
 /* Created by gouthamkumarreddymeda on 4/16/23 */
 object JoinsUnionSubtract {
   def main(args:Array[String]) {
-
-    val conf = new SparkConf()
-      .setMaster("local[2]")
-      .setAppName("running joinsUnionSubtract")
-    val sc = new SparkContext(conf)
-    sc.setLogLevel("ERROR")
 
     //RDD Joins:
     val ardd = sc.parallelize(Array("jan", "feb", "march", "april", "may")).map(x => (x.length, x))

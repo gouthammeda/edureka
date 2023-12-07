@@ -1,17 +1,9 @@
 package SparkRDD
 
-import org.apache.spark.{SparkConf, SparkContext}
-
+import utilities.sparkconfig.sc
 /* Created by gouthamkumarreddymeda on 4/15/23 */
 object MapAndFlatmap {
   def main(args:Array[String]){
-
-    val conf = new SparkConf()
-      .setMaster("local[2]")
-      .setAppName("running transforms")
-    val sc = new SparkContext(conf)
-    sc.setLogLevel("ERROR")
-
   //Map:
   //1 input gives 1 output
   val input = sc.parallelize(List("dog", "salmon", "salmon", "rat", "elephant"), 3)

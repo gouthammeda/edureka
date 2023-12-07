@@ -1,18 +1,11 @@
 package SparkRDD
 
-import org.apache.spark.{SparkConf, SparkContext}
+import utilities.sparkconfig.sc
 
 /* Created by gouthamkumarreddymeda on 4/17/23 */
 object MemoryPersistence {
 
   def main(args: Array[String]) {
-    val conf = new SparkConf()
-      .setMaster("local[2]")
-      .setAppName("running memoryPersistence")
-    val sc = new SparkContext(conf)
-
-    sc.setLogLevel("ERROR")
-
     //persistence
     val l = sc.parallelize(Array("jan", "feb", "march", "april", "may")).map(x => (x.length, x))
     l.cache

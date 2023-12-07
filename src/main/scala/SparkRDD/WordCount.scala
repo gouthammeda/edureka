@@ -1,14 +1,11 @@
 package SparkRDD
 
 //word count
-import org.apache.spark.{SparkConf, SparkContext}
+import utilities.sparkconfig.sc
 /* Created by gouthamkumarreddymeda on 4/15/23 */
 object WordCount {
   def main(args: Array[String]) {
     val logFile = args(0)
-    val sparkConf = new SparkConf().setAppName("Spark word count").setMaster("local")
-    val sc = new SparkContext(sparkConf)
-    sc.setLogLevel("ERROR")
     val file = sc.textFile(logFile)
     val counts = file.flatMap(_.split(" ")).map(x => (x, 1)).reduceByKey(_ + _)
     //counts.collect().foreach(println)

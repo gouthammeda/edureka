@@ -1,22 +1,16 @@
 package SparkDataframe
 
-import org.apache.spark
-import org.apache.spark.sql.SparkSession
+import SparkDataframe.helpercaseclass.person
 import org.apache.spark.sql.functions._
+import utilities.sparkconfig.spark
+import spark.implicits._
+
 
 /* Created by gouthamkumarreddymeda on 4/16/23 */
 object SparkHiveIntegration {
 
   def main(args:Array[String]) {
-    val spark = SparkSession
-      .builder
-      .appName("dataframe")
-      .master(args(0))
-      .getOrCreate()
-    import spark.implicits._
-    spark.sparkContext.setLogLevel("ERROR")
-
-    val data = Seq(Elp("Harry", 24, "Manhattan"), Elp("Marry", 21, "NewYork"), Elp("Ram", 23, "NewDelhi"))
+    val data = Seq(person("Harry", 24, "Manhattan"), person("Marry", 21, "NewYork"), person("Ram", 23, "NewDelhi"))
     val df = data.toDF()
     val df1 = df.withColumn("Department", lit("Finance")).toDF()
     df1.write.parquet("/user/gowthambha87edu/sparkhive")

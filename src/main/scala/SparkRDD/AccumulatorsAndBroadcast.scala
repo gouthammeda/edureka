@@ -1,16 +1,8 @@
 package SparkRDD
-import org.apache.spark.{SparkConf, SparkContext}
-
+import utilities.sparkconfig.sc
 /* Created by gouthamkumarreddymeda on 4/17/23 */
 object AccumulatorsAndBroadcast {
-
   def main(args: Array[String]) {
-
-    val conf = new SparkConf()
-      .setMaster("local[2]")
-      .setAppName("running pair rdds")
-    val sc = new SparkContext(conf)
-    sc.setLogLevel("ERROR")
 
     //RDD Partition and Achieving parallelism
     //shared variables

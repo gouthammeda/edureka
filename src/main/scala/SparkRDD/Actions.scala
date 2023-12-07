@@ -1,17 +1,9 @@
 package SparkRDD
-
-import org.apache.spark.{SparkConf, SparkContext}
+import utilities.sparkconfig.sc
 
 /* Created by gouthamkumarreddymeda on 4/16/23 */
 object Actions {
   def main(args:Array[String]) {
-
-    val conf = new SparkConf()
-      .setMaster("local[1]")
-      .setAppName("running actions")
-    val sc = new SparkContext(conf)
-    sc.setLogLevel("ERROR")
-
     //Actions-> data is executed only after the action is hit.
     val c = sc.parallelize(List(" Gnu ", " Cat ", " Rat ", " Dog "), 2)
     println(c.first)

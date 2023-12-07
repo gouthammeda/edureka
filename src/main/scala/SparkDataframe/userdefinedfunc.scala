@@ -1,18 +1,11 @@
 package SparkDataframe
 
-import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
+import utilities.sparkconfig.spark
 
 /* Created by gouthamkumarreddymeda on 4/16/23 */
 object userdefinedfunc {
   def main(args: Array[String]) {
-    val spark = SparkSession
-      .builder
-      .appName("dataframe")
-      .master("local")
-      .getOrCreate()
-    spark.sparkContext.setLogLevel("ERROR")
-
     val temp = spark.read.json(args(0))
     val CtoF = udf((degCel: Double) => (degCel * 9.0 / 5.0) + 32)
 

@@ -1,19 +1,10 @@
 package SparkRDD
 
-import org.apache.spark.{SparkConf, SparkContext}
+import utilities.sparkconfig.sc
 
 /* Created by gouthamkumarreddymeda on 4/15/23 */
 object sparkRDD {
   def main(args: Array[String]) {
-    //configuring spark properties:
-
-    //spark properties control most application settings and are configured separately for
-    // each application properties can be set in spark conf passed to your spark context.
-    val conf = new SparkConf()
-      .setMaster("local[1]")
-      .setAppName("Creating RDD")
-    val sc = new SparkContext(conf)
-    sc.setLogLevel("ERROR")
 
     //3 ways to create RDDs
     //1.parallelize Method

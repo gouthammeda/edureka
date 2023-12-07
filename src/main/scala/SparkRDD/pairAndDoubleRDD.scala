@@ -1,16 +1,9 @@
 package SparkRDD
 
-import org.apache.spark.{SparkConf, SparkContext}
-
+import utilities.sparkconfig.sc
 /* Created by gouthamkumarreddymeda on 4/15/23 */
 object pairAndDoubleRDD {
   def main(args: Array[String]){
-    val conf = new SparkConf()
-      .setMaster("local[2]")
-      .setAppName("running pair rdds")
-    val sc = new SparkContext(conf)
-    sc.setLogLevel("ERROR")
-
     //Pair RDD'S
     //FoldByKey-->merges values based on function provided.
     val ardd = sc.parallelize(List(" dog ", " cat ", " owl ", " gnu ", " ant "), 2)

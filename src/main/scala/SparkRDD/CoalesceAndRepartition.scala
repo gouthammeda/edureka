@@ -1,16 +1,9 @@
 package SparkRDD
-
-import org.apache.spark.{SparkConf, SparkContext}
+import utilities.sparkconfig.sc
 
 /* Created by gouthamkumarreddymeda on 4/17/23 */
 object CoalesceAndRepartition {
     def main(args:Array[String]) {
-      val conf = new SparkConf()
-        .setMaster("local[1]")
-        .setAppName("coalesce and repartition")
-      val sc = new SparkContext(conf)
-      sc.setLogLevel("ERROR")
-
       val rdd1 = sc.parallelize(Array("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"), 3)
      // val rdd1 = sc.parallelize(Array("jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"), 4)
       val rdd2 = rdd1.coalesce(2)

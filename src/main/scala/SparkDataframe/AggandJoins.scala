@@ -1,21 +1,14 @@
 package SparkDataframe
-
-import org.apache.spark.sql.SparkSession
+import utilities.sparkconfig.spark
 import org.apache.spark.sql.functions._
+import spark.implicits._
+import helpercaseclass.Age
+
 
 /* Created by gouthamkumarreddymeda on 4/17/23 */
 object AggandJoins {
 
   def main(args: Array[String]) {
-    val spark = SparkSession
-      .builder
-      .appName("dataframe transform")
-      .master("local")
-      .getOrCreate()
-
-    import spark.implicits._
-    spark.sparkContext.setLogLevel("ERROR")
-
     val empData = spark.read.option("header", value = true).option("inferSchema", value = true).csv(args(0))
     empData.printSchema
 

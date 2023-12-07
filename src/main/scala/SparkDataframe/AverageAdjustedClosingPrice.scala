@@ -1,24 +1,17 @@
 package SparkDataframe
 
-import org.apache.spark.sql.SparkSession
 import org.apache.spark.sql.functions._
+import utilities.sparkconfig.spark
 
 /* Created by gouthamkumarreddymeda on 4/17/23 */
 object AverageAdjustedClosingPrice {
     def main(args:Array[String]) {
-      val spark = SparkSession
-        .builder
-        .appName("dataframe")
-        .master("local")
-        .getOrCreate()
-
-      spark.sparkContext.setLogLevel("ERROR")
       //calculate Average adjusted closing price for aaon stock
       // per month in descending order of year and month
       //performing sample use case with dataframe
 
       //1.Read the file to create dataframe
-      val aaonDf = spark.read.option("header", true).option("inferSchema", true).csv("/user/gowthambha87edu/sparkDF/aaon.csv")
+      val aaonDf = spark.read.option("header", true).option("inferSchema", true).csv(args(0))
       //2.Extract year from date
       //year - function to extract year from date
       val aaonYear = aaonDf.withColumn("Year", year(col("Date")))
