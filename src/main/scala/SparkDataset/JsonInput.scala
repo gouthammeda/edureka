@@ -2,6 +2,7 @@ package SparkDataset
 
 import utilities.sparkconfig.spark
 import spark.implicits._
+import utilities.caseclassHelper.Employee
 
 /* Created by gouthamkumarreddymeda on 4/16/23 */
 object JsonInput {

@@ -43,6 +43,7 @@ object MapAndFlatmap {
   //Array(This is line 1, This is line 2, This is line3)
 
     println("-----")
+
     //come back to it and later convert it to Array(This is line 1, This is line 2, This is line3)
   val a = Array("This is line 1", "This is line 2", "This is line3")
   val ardd = sc.parallelize(a)

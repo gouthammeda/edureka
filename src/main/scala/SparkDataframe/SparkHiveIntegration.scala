@@ -1,6 +1,6 @@
 package SparkDataframe
 
-import caseclassHelper.person
+import utilities.caseclassHelper.person
 import org.apache.spark.sql.functions._
 import utilities.sparkconfig.spark
 import spark.implicits._
@@ -13,7 +13,6 @@ object SparkHiveIntegration {
     val df = data.toDF()
     val df1 = df.withColumn("Department", lit("Finance")).toDF()
     df1.write.parquet(args(0))
-
     val sparkhivedf = spark.sql("select * from gowthambha87edu.sparkhive")
     sparkhivedf.show
   }
