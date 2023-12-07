@@ -8,7 +8,5 @@ object sparksql {
     people.createOrReplaceTempView("people")
     val peopleGt30 = spark.sql("select * from people where age > 30")
     peopleGt30.show
-//    people.filter(col("age").gt(30)).show
-
   }
 }

@@ -2,7 +2,7 @@ package SparkDataframe
 import utilities.sparkconfig.spark
 import org.apache.spark.sql.functions._
 import spark.implicits._
-import helpercaseclass.Age
+import caseclassHelper.Age
 
 
 /* Created by gouthamkumarreddymeda on 4/17/23 */

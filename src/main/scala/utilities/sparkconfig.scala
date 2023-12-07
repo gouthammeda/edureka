@@ -3,6 +3,7 @@ package utilities
 import org.apache.spark.sql.SparkSession
 import org.apache.spark.{SparkConf, SparkContext}
 
+
 object sparkconfig {
   //configuring spark properties:
   //spark properties control most application settings and are configured separately for

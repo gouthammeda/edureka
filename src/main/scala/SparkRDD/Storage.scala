@@ -3,15 +3,13 @@ package SparkRDD
 import utilities.sparkconfig.sc
 
 /* Created by gouthamkumarreddymeda on 4/17/23 */
-object MemoryPersistence {
-
+object Storage {
   def main(args: Array[String]) {
     //persistence
     val l = sc.parallelize(Array("jan", "feb", "march", "april", "may")).map(x => (x.length, x))
     l.cache
     l.take(4).foreach(println)
     println(l.getStorageLevel)
-
     println("------")
     val p = sc.parallelize(1 to 100000, 2)
     p.persist(org.apache.spark.storage.StorageLevel.DISK_ONLY)
@@ -40,13 +38,6 @@ object MemoryPersistence {
     z.collect
     z.unpersist(true)
     println(z.getStorageLevel)
-
-    //cache
-//    val textFile = sc.textFile(args(0))
-//    textFile.count()
-//    textFile.first()
-//    val linesWithSpark = textFile.filter(line => line.contains("spark"))
-//    linesWithSpark.cache()
 
   }
 }

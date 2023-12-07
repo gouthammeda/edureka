@@ -1,8 +1,6 @@
 package SparkDataframe
-
-
+import utilities.sparkconfig._
 import org.apache.spark.sql.functions._
-import utilities.sparkconfig.spark
 
 //calculate Average adjusted closing price for aaon stock per month in descending order of year and month
 //performing sample use case with dataframe

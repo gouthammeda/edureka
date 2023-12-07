@@ -1,11 +1,10 @@
 package SparkRDD
 import utilities.sparkconfig.sc
+//shared variables
+
 /* Created by gouthamkumarreddymeda on 4/17/23 */
 object AccumulatorsAndBroadcast {
   def main(args: Array[String]) {
-
-    //RDD Partition and Achieving parallelism
-    //shared variables
     //with broadcast variables are shipped to all executors and cached for future reference.
     val broadcastVar = sc.broadcast(Array(1, 2, 3))
     broadcastVar.value.foreach(println)
