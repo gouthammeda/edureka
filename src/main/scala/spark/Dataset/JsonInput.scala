@@ -1,4 +1,4 @@
-package SparkDataset
+package spark.Dataset
 
 import utilities.sparkconfig.spark
 import spark.implicits._

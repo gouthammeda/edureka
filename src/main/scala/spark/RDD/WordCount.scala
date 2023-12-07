@@ -1,4 +1,4 @@
-package SparkRDD
+package spark.RDD
 
 //word count
 import utilities.sparkconfig.sc

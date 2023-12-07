@@ -1,4 +1,4 @@
-package SparkRDD
+package spark.RDD
 
 import utilities.sparkconfig.sc
 /* Created by gouthamkumarreddymeda on 4/15/23 */

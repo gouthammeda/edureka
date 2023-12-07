@@ -1,4 +1,5 @@
-package SparkDataframe
+package spark.Dataframe
+
 import utilities.sparkconfig.spark
 /* Created by gouthamkumarreddymeda on 4/17/23 */
 object sparksql {

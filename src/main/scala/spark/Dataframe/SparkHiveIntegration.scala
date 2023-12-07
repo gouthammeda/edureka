@@ -1,4 +1,4 @@
-package SparkDataframe
+package spark.Dataframe
 
 import utilities.caseclassHelper.person
 import org.apache.spark.sql.functions._
