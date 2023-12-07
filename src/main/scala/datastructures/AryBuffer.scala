@@ -6,7 +6,7 @@ package datastructures
 
 import scala.collection.mutable.ArrayBuffer
 object AryBuffer {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     val ab = ArrayBuffer[Int]()
     ab += 1
     ab += (2, 3, 4)

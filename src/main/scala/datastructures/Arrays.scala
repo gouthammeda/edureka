@@ -3,7 +3,7 @@ package datastructures
 //arrays --> collection of elements of same data type, they are mutable
 /* Created by gouthamkumarreddymeda on 4/15/23 */
 object Arrays {
-  def main(args: Array[String]) = {
+  def main(args: Array[String]): Unit = {
 
     val a = Array(1, 2, 3)
     a(0)

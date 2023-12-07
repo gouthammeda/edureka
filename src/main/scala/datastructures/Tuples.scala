@@ -4,7 +4,7 @@ package datastructures
 
 /* Created by gouthamkumarreddymeda on 4/15/23 */
 object Tuples {
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
 
     val u = (1, 4, "Bob", "Jack")
     println(u)

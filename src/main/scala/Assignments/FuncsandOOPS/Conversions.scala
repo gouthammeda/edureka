@@ -1,4 +1,4 @@
-package Assignments.FunctionalProgramandOOPS
+package Assignments.FuncsandOOPS
 
 object Conversions {
 

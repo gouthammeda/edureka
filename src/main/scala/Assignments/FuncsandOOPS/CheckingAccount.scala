@@ -1,4 +1,5 @@
-package Assignments.FunctionalProgramandOOPS
+package Assignments.FuncsandOOPS
+
 object CheckingAccount{
 class AccountInformation (initBal:Double){
   private var balance = initBal

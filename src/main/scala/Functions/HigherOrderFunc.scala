@@ -61,6 +61,7 @@ object HigherOrderFunc{
     println(sumHO(2, 4, in => in * in * in))
 
     println("-------")
+
     //useful higher order functions
     (1 to 9).map(0.1 * _).foreach(println)
     (1 to 9).map("*" * _).foreach(println)

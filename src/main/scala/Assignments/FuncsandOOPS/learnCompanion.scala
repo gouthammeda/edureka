@@ -1,4 +1,4 @@
-package Assignments.FunctionalProgramandOOPS
+package Assignments.FuncsandOOPS
 
 //TODO comeback for this companion object for assigning name two ways
 

@@ -12,10 +12,9 @@ object AverageAdjustedClosingPrice {
         .master("local")
         .getOrCreate()
 
-      import spark.implicits._
-
       spark.sparkContext.setLogLevel("ERROR")
-      //calculate Average adjusted closing price for aaon stock per month in descending order of year and month
+      //calculate Average adjusted closing price for aaon stock
+      // per month in descending order of year and month
       //performing sample use case with dataframe
 
       //1.Read the file to create dataframe

@@ -13,13 +13,14 @@ object JsonandCsvInput {
       .master("local")
       .getOrCreate()
     spark.sparkContext.setLogLevel("ERROR")
+    import spark.implicits._
 
     val peopleDF = spark.read.json(args(0))
     peopleDF.show()
     peopleDF.select("name").show()
-    //peopleDF.select($"name",$"age"+1).show()
-    //peopleDF.filter($"age" > 21).show()
-    //peopleDF.groupBy("age").count.show()
+    peopleDF.select($"name",$"age"+1).show()
+    peopleDF.filter($"age" > 21).show()
+    peopleDF.groupBy("age").count.show()
 
     val personGt30 = peopleDF.filter(col("age").gt(30))
     personGt30.show()

@@ -4,7 +4,7 @@ import org.apache.spark.sql.SparkSession
 
 
 /* Created by gouthamkumarreddymeda on 4/16/23 */
-object DatasetcreationJsonInput {
+object DatasetJsonInput {
   def main(args: Array[String]) {
 
     val spark = SparkSession

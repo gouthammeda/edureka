@@ -3,7 +3,7 @@ package Loops
 /* Created by gouthamkumarreddymeda on 4/18/23 */
 object whileLoop {
 
-  def main(args: Array[String]) {
+  def main(args: Array[String]): Unit = {
     //while loop
     var a = 10
     while (a < 20) {

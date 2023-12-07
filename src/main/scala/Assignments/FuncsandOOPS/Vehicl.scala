@@ -1,4 +1,5 @@
-package Assignments.FunctionalProgramandOOPS
+package Assignments.FuncsandOOPS
+
 object Vehicl extends App{
 class Vehicle(speed:Int) {
   val mph:Int = speed

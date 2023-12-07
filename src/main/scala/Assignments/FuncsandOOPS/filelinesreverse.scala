@@ -1,6 +1,6 @@
-package Assignments.FunctionalProgramandOOPS
+package Assignments.FuncsandOOPS
+
 import scala.io.Source
-import scala.collection.mutable.ArrayBuffer
 
 object filelinesreverse {
   def main (args: Array[String])= {

@@ -16,10 +16,10 @@ object AggandJoins {
     import spark.implicits._
     spark.sparkContext.setLogLevel("ERROR")
 
-    //using csv as input
     val empData = spark.read.option("header", value = true).option("inferSchema", value = true).csv(args(0))
     empData.printSchema
 
+    //aggregations
     empData.withColumnRenamed("salary", "money").show
     empData.withColumn("lenLastName", length(col("last_name"))).show
     empData.select(max(length(col("last_name")))).show
