@@ -1,9 +1,8 @@
 package spark.Dataframe
 
-import utilities.sparkconfig.spark
 import org.apache.spark.sql.functions._
+import utilities.sparkconfig.spark
 import spark.implicits._
-
 
 /* Created by gouthamkumarreddymeda on 4/17/23 */
 object JsonandCsvInput {
